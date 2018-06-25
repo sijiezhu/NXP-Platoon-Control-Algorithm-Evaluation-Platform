@@ -1,6 +1,6 @@
 # llc-platooning-app 
 
-One Paragraph of project description goes here
+This is a guide of using the platoon control algorithm evaluation platform.
 
 ## Getting Started
 
@@ -12,28 +12,10 @@ A Linux PC (or virtual machine) needs to be connected to the MK5 nodes via the E
 Note: Making sure the devices in the LAN (local-area network) are all interconnected. This can be checked by SSH commands.
 
 
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-First enter the llc-platooning-app directory, and enter 
-
-```
-make mk5
-```
-
-The generated executable "llc-platooning-app" needs to be copied to the MK5 nodes
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the example
+### Running the demo
 The project directory includes a folder containing the source code and a Makefile realizing test automation.
 
-1. The executable (llc-platooning-app) needs to run with a configuration file, by typing
+1. The test automation can be simply started by
 ```
 make install
 make run
@@ -45,17 +27,29 @@ Then, the script will do the followings:
 4. Start the application in different nodes in the downstream direction (from the end to the leader).
 5. Retrieve the logs and the time difference data.
 
-Note 1: The log files are automatically generated on different MK5s after each test, named after LogX, where 'X' is the platoon member ID the node is configured. <br />
-Note 2: The logging system records the status of the node every 10ms. A row of data is generated every logging cycle. <br />
+**Note 1**: The log files are automatically generated on different MK5s after each test, named after LogX, where 'X' is the platoon member ID the node is configured. 
 
-As an alternative, the executable can be copied to the MK5 devices and started manually, by
+**Note 2**: The logging system records the status of the node every 10ms. A row of data is generated every logging cycle. 
+
+**Alternatively**, the executable can be copied to the MK5 devices and started manually, by
 ```
 sudo ./llc-platooning-app -f platoontest.conf
 ```
-Note 1: the MK5s share the same executable and are identified with the configuration file. <br />
-Note 2: to conduct tests correctly, the nodes should be started in the downstream direction (from the end to the leader). This can be realized manually or automatically (with a script). <br />
+**Note 1**: the MK5s share the same executable. The node is identified with the configuration file. 
 
+**Note 2**: to conduct tests correctly, the nodes should be started in the downstream direction (from the end to the leader). This can be realized manually or automatically (with a script). 
 
+## Building
+
+You might want to make some changes to the platform. The building of the project requires the CohdaMobility MKx SDK. First enter the source code directory ("llc-platooning-app"), and type 
+```
+make mk5
+```
+The generated executable "llc-platooning-app" needs to be copied to the MK5 nodes
+**Alternatively**, you can compile the code in the project directory by 
+```
+make install
+```
 
 ## Log Analysis
 
@@ -65,15 +59,7 @@ MATLAB scripts which can process the test logs are provided.
 
 Add additional notes about how to deploy this on a live system
 
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
 ## Authors
 
 * **Sijie Zhu** - [Github](https://github.com/sijiezhu)
-
-
-
