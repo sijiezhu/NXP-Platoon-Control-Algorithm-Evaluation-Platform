@@ -35,18 +35,26 @@ The project directory includes a folder containing the source code and a Makefil
 
 1. The executable (llc-platooning-app) needs to run with a configuration file, by typing
 ```
+make install
 make run
 ```
+Then, the script will do the followings:
+1. Compile the project and generate the executable.
+2. Copy the executable to the MK5 nodes.
+3. Generate the configuration files for each node, according to the parameters in the Makefile.
+4. Start the application in different nodes in the downstream direction (from the end to the leader).
+5. Retrieve the logs and the time difference data.
 
+Note 1: The log files are automatically generated on different MK5s after each test, named after LogX, where 'X' is the platoon member ID the node is configured. <br />
+Note 2: The logging system records the status of the node every 10ms. A row of data is generated every logging cycle. <br />
 
 As an alternative, the executable can be copied to the MK5 devices and started manually, by
 ```
 sudo ./llc-platooning-app -f platoontest.conf
 ```
-Note 1: the MK5s share the same executable and are identified with the configuration file.
-Note 2: to conduct tests correctly, the nodes should be started in the downstream direction (from the end to the leader). This can be realized manually or automatically (with a script).
-3. The log files are automatically generated on different MK5s after each test, named after LogX, where 'X' is the platoon member ID the node is configured.
-4. The logging system records the status of the node every 10ms. A row of data is generated every logging cycle.
+Note 1: the MK5s share the same executable and are identified with the configuration file. <br />
+Note 2: to conduct tests correctly, the nodes should be started in the downstream direction (from the end to the leader). This can be realized manually or automatically (with a script). <br />
+
 
 
 ## Log Analysis
