@@ -1,4 +1,4 @@
-# Platooning
+# llc-platooning-app 
 
 One Paragraph of project description goes here
 
@@ -8,26 +8,21 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Connections
 
-What things you need to install the software and how to install them
-
-1. A linux PC (or virtual machine) needs to be connected to the MK5 nodes via the Ethernet switch.
+A linux PC (or virtual machine) needs to be connected to the MK5 nodes via the Ethernet switch.
 Note: Making sure the devives in the LAN (local-area network) are all interconnected. This can be checked by SSH commands.
 
-```
-Give examples
-```
 
 ### Installing
 
 A step by step series of examples that tell you how to get a development env running
 
-Say what the step will be
+First enter the llc-platooning-app directory, and enter 
 
 ```
-Give the example
+make mk5
 ```
 
-And repeat
+The generated executable "llc-platooning-app" needs to be copied to the MK5 nodes
 
 ```
 until finished
@@ -36,9 +31,9 @@ until finished
 End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the example
-1. The excutable needs to run with a configuration file, by using
+1. The excutable (llc-platooning-app) needs to run with a configuration file, by using
 ```
-./llc-platooning-app - f configuration.conf
+sudo ./llc-platooning-app -f platoontest.conf
 ```
 Note 1: the MK5s share the same excutable and are identified with the configuration file.
 Note 2: to conduct tests correctly, the nodes should be started in the downstream direction (from the end to the leader). This can be realized manually or automatically (with a script).
@@ -60,17 +55,9 @@ Add additional notes about how to deploy this on a live system
 * [Maven](https://maven.apache.org/) - Dependency Management
 * [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
 ## Authors
 
-* **Sijie Zhu** - *Initial work* - [Sijie](https://github.com/sijiezhu)
+* **Sijie Zhu** - [Sijie](https://github.com/sijiezhu)
 
 
 
