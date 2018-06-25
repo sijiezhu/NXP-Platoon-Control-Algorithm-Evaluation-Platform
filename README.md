@@ -8,8 +8,8 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Connections
 
-A linux PC (or virtual machine) needs to be connected to the MK5 nodes via the Ethernet switch.
-Note: Making sure the devives in the LAN (local-area network) are all interconnected. This can be checked by SSH commands.
+A Linux PC (or virtual machine) needs to be connected to the MK5 nodes via the Ethernet switch.
+Note: Making sure the devices in the LAN (local-area network) are all interconnected. This can be checked by SSH commands.
 
 
 ### Installing
@@ -31,11 +31,19 @@ until finished
 End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the example
-1. The excutable (llc-platooning-app) needs to run with a configuration file, by using
+The project directory includes a folder containing the source code and a Makefile realizing test automation.
+
+1. The executable (llc-platooning-app) needs to run with a configuration file, by typing
+```
+make run
+```
+
+
+As an alternative, the executable can be copied to the MK5 devices and started manually, by
 ```
 sudo ./llc-platooning-app -f platoontest.conf
 ```
-Note 1: the MK5s share the same excutable and are identified with the configuration file.
+Note 1: the MK5s share the same executable and are identified with the configuration file.
 Note 2: to conduct tests correctly, the nodes should be started in the downstream direction (from the end to the leader). This can be realized manually or automatically (with a script).
 3. The log files are automatically generated on different MK5s after each test, named after LogX, where 'X' is the platoon member ID the node is configured.
 4. The logging system records the status of the node every 10ms. A row of data is generated every logging cycle.
@@ -43,9 +51,9 @@ Note 2: to conduct tests correctly, the nodes should be started in the downstrea
 
 ## Log Analysis
 
-Matlab scripts which can process the test logs are provided.
-* Validation3.m processes the timestamps of the log files which were recorded based on unsynchronised device time.
-* Validation4.m examies the string stability. It needs Log1.csv, Log2.csv, Log3.csv and Log4.csv to execute
+MATLAB scripts which can process the test logs are provided.
+* Validation3.m processes the timestamps of the log files which were recorded based on synchronized device time.
+* Validation4.m examines the string stability. It needs Log1.csv, Log2.csv, Log3.csv and Log4.csv to execute
 
 Add additional notes about how to deploy this on a live system
 
@@ -57,7 +65,7 @@ Add additional notes about how to deploy this on a live system
 
 ## Authors
 
-* **Sijie Zhu** - [Sijie](https://github.com/sijiezhu)
+* **Sijie Zhu** - [Github](https://github.com/sijiezhu)
 
 
 
