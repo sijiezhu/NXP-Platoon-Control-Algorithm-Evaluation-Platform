@@ -36,21 +36,9 @@ Then, the script will do the followings:
 ```
 sudo ./llc-platooning-app -f platoontest.conf
 ```
-**Note 1**: the MK5s share the same executable. The node is identified with the configuration file. 
+**Note 1**: The MK5s share the same executable. The parameters of each node are specified using the configuration files. 
 
-**Note 2**: to conduct tests correctly, the nodes should be started in the downstream direction (from the end to the leader). This can be realized manually or automatically (with a script). 
-
-## Building
-
-You might want to make some changes to the platform. The building of the project requires the CohdaMobility MKx SDK. First enter the source code directory ("llc-platooning-app"), and type 
-```
-make mk5
-```
-The generated executable "llc-platooning-app" needs to be copied to the MK5 nodes
-**Alternatively**, you can compile the code in the project directory by 
-```
-make install
-```
+**Note 2**: To conduct tests correctly, the nodes should be started in the downstream direction (from the end to the leader).
 
 ## Log Analysis
 
@@ -60,6 +48,18 @@ MATLAB scripts which can process the test logs are provided.
 
 Add additional notes about how to deploy this on a live system
 
+## Building
+
+You might want to make some changes to the platform. The building of the project requires the CohdaMobility MKx SDK. First enter the source code directory ("llc-platooning-app"), and type 
+```
+make mk5
+```
+The generated executable "llc-platooning-app" and the configuration files should be copied to the MK5 nodes manually by "SCP" command.
+
+**Alternatively**, you can compile the code in the project directory by 
+```
+make install
+```
 
 ## Authors
 
