@@ -13,7 +13,7 @@ Note: Making sure the devices in the LAN (local-area network) are all interconne
 
 
 ### Running the demo
-The project directory includes a folder containing the source code and a Makefile realizing test automation.
+The project directory includes a folder ("llc-platooning-app") containing the source code and a Makefile realizing test automation.
 
 1. The test automation can be simply started by
 ```
@@ -24,8 +24,9 @@ Then, the script will do the followings:
 1. Compile the project and generate the executable.
 2. Copy the executable to the MK5 nodes.
 3. Generate the configuration files for each node, according to the parameters in the Makefile.
-4. Start the application in different nodes in the downstream direction (from the end to the leader).
-5. Retrieve the logs and the time difference data.
+4. Copy the configuration files to the MK5 nodes.
+5. Start the application in different nodes in the downstream direction (from the end of the platoon to the leader).
+6. Retrieve the logs and the time difference data.
 
 **Note 1**: The log files are automatically generated on different MK5s after each test, named after LogX, where 'X' is the platoon member ID the node is configured. 
 
