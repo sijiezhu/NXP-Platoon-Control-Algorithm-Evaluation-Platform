@@ -13,9 +13,22 @@ Note: Making sure the devices in the LAN (local-area network) are all interconne
 
 
 ### Running the demo
-The project directory includes a folder ("llc-platooning-app") containing the source code and a Makefile realizing test automation.
+Unzip the project zip file. The generated folder includes a folder ("llc-platooning-app") containing the source code and a Makefile realizing test automation.
 
-1. The test automation can be simply started by
+1. Move the "llc-platooning-app" to "mk5/stack/apps"
+
+2. 
+```
+cd workspace-mk5
+mkdir PCA_test
+cd PCA_test
+ln -s ~/mk5/stack/apps/llc-platooning-app ./
+```
+3. Move the unzipped Makefile to "workspace-mk5/PCA_test/"
+
+4. For successfully executing the example, the *MK5 IP addresses* and the *Log directory* may need to be modified.
+
+5. The test automation can be simply started by
 ```
 make install
 make run
