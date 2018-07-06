@@ -17,19 +17,20 @@ Unzip the project zip file. The generated folder includes a folder ("llc-platoon
 
 1. Move the "llc-platooning-app" to "mk5/stack/apps"
 
-2. 
+2. Create a project directory in "workspace-mk5" and shortcut to the source code.
 ```
 cd workspace-mk5
 mkdir PCA_test
 cd PCA_test
 ln -s ~/mk5/stack/apps/llc-platooning-app ./
 ```
-3. Move the unzipped Makefile to "workspace-mk5/PCA_test/"
+3. Move the unzipped Makefile to "workspace-mk5/PCA_test/".
 
-4. For successfully executing the example, the *MK5 IP addresses* and the *Log directory* may need to be modified.
+4. For successfully executing the example, the *MK5 IP addresses* and the *Log directory* in the *Makefile* might need to be modified.
 
 5. The test automation can be simply started by
 ```
+cd ~/workspace-mk5/PCA_test
 make install
 make run
 ```
@@ -49,9 +50,17 @@ Then, the script will do the followings:
 ```
 sudo ./llc-platooning-app -f platoontest.conf
 ```
+
+**Syntax of .conf**:
+LLC=$(Radio),$(Channel),$(Power),$(Bitrate),$(MessageInterval),$(vehicleId),$(DesOrAct),$(PLOEG_FREQ),$(TIMEHEADWAY),$(ENGINE_LAG_TIME_CONSTANT)
+
+More detail can be found in the *Configuration file parsing* part of the **application doc**.
+
 **Note 1**: The MK5s share the same executable. The parameters of each node are specified using the configuration files. 
 
-**Note 2**: To conduct tests correctly, the nodes should be started in the downstream direction (from the end to the leader).
+**Note 2**: To conduct tests correctly, the nodes should be started in the downstream direction (from the end to the leader). A 2 seconds delay is needed for avoiding time synchornization error.
+
+
 
 ## Log Analysis
 
