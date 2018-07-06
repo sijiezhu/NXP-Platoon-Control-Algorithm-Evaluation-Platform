@@ -57,13 +57,13 @@ sudo ./llc-platooning-app -f platoontest.conf
 ### Syntax of .conf
 LLC=$(Radio),$(Channel),$(Power),$(Bitrate),$(MessageInterval),$(vehicleId),$(DesOrAct),$(PLOEG_FREQ),$(TIMEHEADWAY),$(ENGINE_LAG_TIME_CONSTANT)
 
-More detail can be found in the *Configuration file parsing* part of the **application doc**.
+More detail can be found in the *Configuration file parsing* section of the **application doc**.
 
 ## Log Analysis
 
-MATLAB scripts which can process the test logs are provided.
-* Validation3.m processes the timestamps of the log files which were recorded based on synchronized device time.
-* Validation4.m examines the string stability. It needs Log1.csv, Log2.csv, Log3.csv and Log4.csv to execute
+MATLAB scripts which can analyze the test logs are provided. They need *Log1.csv*, *Log2.csv*, *Log3.csv*, *Log4.csv*, three time synchornization files, and *platoontest.conf* to execute
+* Visualization.m helps you quickly visualize logs.
+* StringstabilityAnalysis.m examines the string stability. 
 
 Add additional notes about how to deploy this on a live system
 
@@ -87,6 +87,7 @@ cd ~/workspace-mk5/PCA_test/llc-platooning-app
 make doc
 ```
 The web virsion of document can be found at "~/workspace-mk5/PCA_test/llc-platooning-app/doc/html/index.html".
+
 **Note**: The generation of the .pdf document requires Latex environment. Ignore the Doxygen error if you do not have Latex installed.
 
 ## Authors
